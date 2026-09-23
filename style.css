@@ -1,0 +1,674 @@
+/* ---------- GENERAL ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #c7e3ee;
+    font-family: Georgia, serif;
+    color: #173f52;
+}
+
+
+/* ---------- WELCOME SCREEN ---------- */
+
+.welcome-screen {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ---------- TITLE ---------- */
+
+h1 {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+
+    animation: fadeIn 1.2s ease;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: normal;
+
+    margin-bottom: 25px;
+
+    animation: fadeIn 1.5s ease;
+}
+
+
+/* ---------- INTRO TEXT ---------- */
+
+.intro-text {
+    font-size: 1rem;
+    margin-bottom: 35px;
+
+    animation: fadeIn 1.8s ease;
+}
+
+
+/* ---------- GOLD STARS ---------- */
+
+.gold-star {
+    color: #c99b3b;
+    font-size: 2rem;
+
+    margin-bottom: 25px;
+
+    animation: sparkle 2s infinite ease-in-out;
+}
+
+.bottom-star {
+    position: absolute;
+    bottom: 40px;
+    right: 35px;
+
+    font-size: 1.5rem;
+}
+
+
+/* ---------- CONTINUE BUTTON ---------- */
+
+#continueButton {
+    background-color: #c99b3b;
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+
+    padding: 15px 35px;
+
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+#continueButton:active {
+    transform: scale(0.94);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes sparkle {
+
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* ---------- MEMORY SCREEN ---------- */
+
+.memory-screen {
+    min-height: 100vh;
+
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+padding: 25px 30px;
+}
+
+
+/* ---------- POLAROID ---------- */
+
+.polaroid {
+    background-color: #fffdf7;
+
+    width: min(82vw, 360px);
+
+    padding: 14px;
+    padding-bottom: 40px;
+
+    position: relative;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+
+    transform: rotate(-2.5deg);
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
+.polaroid::before {
+    content: "";
+    position: absolute;
+
+    width: 80px;
+    height: 22px;
+
+    background-color: rgba(255, 245, 190, 0.75);
+
+    top: -11px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-3deg);
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+
+.polaroid img {
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+.caption {
+    color: #173f52;
+
+    font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+
+    font-size: 1rem;
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    transform: rotate(1deg);
+}
+
+
+/* ---------- NEXT MEMORY BUTTON ---------- */
+
+#nextMemoryButton {
+    background-color: #4169e1;
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+
+    padding: 15px 35px;
+
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+#nextMemoryButton:active {
+    transform: scale(0.94);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------- MEMORY INSTRUCTION ---------- */
+
+.swipe-text {
+    color: #173f52;
+
+    font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+
+    font-size: 0.9rem;
+
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    opacity: 0.75;
+
+    transform: rotate(-1deg);
+}
+
+
+/* ---------- RIDDLE SCREEN ---------- */
+
+.riddle-screen {
+    min-height: 100vh;
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+/* ---------- RIDDLE CARD ---------- */
+
+.riddle-card {
+    background-color: #9fc9dc;
+
+    width: min(90vw, 400px);
+
+    padding: 35px 25px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    border: 2px solid #c99b3b;
+}
+
+
+.riddle-card h1 {
+    margin-bottom: 20px;
+}
+
+
+.riddle-question {
+    font-size: 1.1rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* ---------- RIDDLE INPUT ---------- */
+
+#riddleAnswer {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    font-size: 1rem;
+
+    text-align: center;
+
+    outline: none;
+
+    margin-bottom: 15px;
+}
+
+
+/* ---------- SUBMIT BUTTON ---------- */
+
+#riddleSubmit {
+    background-color: #c99b3b;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding: 14px 30px;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+#riddleSubmit:active {
+    transform: scale(0.94);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------- RIDDLE ERROR ---------- */
+
+#riddleError {
+    margin-top: 18px;
+
+    color: #173f52;
+
+    font-weight: bold;
+}
+
+
+/* ---------- POLAROID SLIDE ANIMATIONS ---------- */
+
+@keyframes slideOutLeft {
+
+    from {
+        transform: translateX(0) rotate(-2deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-120vw) rotate(-12deg);
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes slideInRight {
+
+    from {
+        transform: translateX(120vw) rotate(12deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) rotate(-2deg);
+        opacity: 1;
+    }
+
+}
+
+
+.polaroid.slide-out {
+    animation: slideOutLeft 0.45s ease-in forwards;
+}
+
+
+.polaroid.slide-in {
+    animation: slideInRight 0.45s ease-out forwards;
+}
+
+
+/* ---------- BIRTHDAY MESSAGE ---------- */
+
+#birthdayMessage {
+    display: none;
+
+    width: min(90vw, 500px);
+
+    text-align: center;
+
+    position: relative;
+
+    padding: 38px 25px 45px;
+
+    background-color: #b9dce8;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.15),
+        0 3px 6px rgba(0, 0, 0, 0.08);
+
+    /* notebook lines */
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 29px,
+            rgba(64, 112, 130, 0.18) 30px
+        );
+
+    transform: rotate(-0.5deg);
+}
+/* ---------- CRAFTY TORN PAPER EDGES ---------- */
+
+#birthdayMessage::before,
+#birthdayMessage::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    height: 14px;
+
+    background-color: #b9dce8;
+}
+
+
+/* top torn edge */
+
+#birthdayMessage::before {
+    top: -7px;
+
+    clip-path: polygon(
+        0% 50%,
+        4% 20%,
+        8% 55%,
+        12% 25%,
+        16% 60%,
+        20% 30%,
+        24% 55%,
+        28% 20%,
+        32% 60%,
+        36% 30%,
+        40% 55%,
+        44% 20%,
+        48% 60%,
+        52% 30%,
+        56% 55%,
+        60% 20%,
+        64% 60%,
+        68% 30%,
+        72% 55%,
+        76% 20%,
+        80% 60%,
+        84% 30%,
+        88% 55%,
+        92% 20%,
+        96% 60%,
+        100% 30%,
+        100% 100%,
+        0% 100%
+    );
+}
+
+
+/* bottom torn edge */
+
+#birthdayMessage::after {
+    bottom: -7px;
+
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 70%,
+        96% 45%,
+        92% 80%,
+        88% 50%,
+        84% 75%,
+        80% 45%,
+        76% 80%,
+        72% 50%,
+        68% 75%,
+        64% 45%,
+        60% 80%,
+        56% 50%,
+        52% 75%,
+        48% 45%,
+        44% 80%,
+        40% 50%,
+        36% 75%,
+        32% 45%,
+        28% 80%,
+        24% 50%,
+        20% 75%,
+        16% 45%,
+        12% 80%,
+        8% 50%,
+        4% 75%,
+        0% 45%
+    );
+}
+
+
+#birthdayMessage.show {
+    display: block;
+
+    animation: birthdayFadeIn 1s ease forwards;
+}
+
+
+.success-text {
+    font-size: 1.2rem;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+
+#birthdayMessage h2 {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+#birthdayMessage h2::before {
+    content: "✦";
+    position: absolute;
+    left: -30px;
+    top: 2px;
+    color: #c99b3b;
+    font-size: 1rem;
+    transform: rotate(-15deg);
+}
+
+#birthdayMessage h2::after {
+    content: "♡";
+    position: absolute;
+    right: -30px;
+    top: 2px;
+    color: #c99b3b;
+    font-size: 1rem;
+    transform: rotate(12deg);
+}
+
+#birthdayMessage p {
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+
+@keyframes birthdayFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ---------- RIDDLE FADE OUT ---------- */
+
+.riddle-card.fade-out {
+    animation: riddleFadeOut 0.7s ease forwards;
+}
+
+
+@keyframes riddleFadeOut {
+
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+}
+/* ---------- BIRTHDAY LETTER ---------- */
+
+.birthday-letter {
+    text-align: left;
+
+    max-height: 55vh;
+
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    padding: 8px 5px;
+
+    font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+
+    font-size: 1rem;
+
+    line-height: 1.85;
+
+    color: #244d5c;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    border-radius: 0;
+
+    margin-top: 10px;
+}
+
+.birthday-letter::-webkit-scrollbar {
+    display: none;
+}
